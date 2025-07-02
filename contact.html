@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Buzz's Lighthouse</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="logo">
+                <h1><a href="index.html">Buzz's Lighthouse</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="menus.html">Menus (New)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="contact-hero" class="text-center py-2">
+            <div class="container">
+                <h1>Get In Touch</h1>
+                <p class="lead">We'd love to hear from you! Reach out with any questions or just to say hello.</p>
+            </div>
+        </section>
+
+        <section id="contact-form-section" class="py-2">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="form-container">
+                        <h2>Connect with Us</h2>
+                        <form id="main-contact-form">
+                            <div class="form-group">
+                                <label for="first-name">Your First Name</label>
+                                <input type="text" id="first-name" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Your Last Name</label>
+                                <input type="text" id="last-name" name="lastName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Your Email Address</label>
+                                <input type="email" id="contact-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regarding">Regarding</label>
+                                <input type="text" id="regarding" name="regarding">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                        <p id="contact-form-thanks" style="display:none; margin-top:15px; color: green;">Thank You for your message!</p>
+                    </div>
+
+                    <aside class="contact-info-aside">
+                        <div class="img-placeholder" style="height: 280px; max-width: 350px;">Placeholder: Contact Page Image (e.g., buzz_lighthouse_1604080757...jpg)</div>
+                        <div class="hours-operation py-2">
+                            <h3>Hours of Operation</h3>
+                            <p>Monday - Sunday: 11:30am - 9pm</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div id="footer-info">
+                <p><strong>BUZZ'S LIGHTHOUSE RESTAURANT</strong></p>
+                <p><a href="mailto:info@buzzlighthouse.com">info@buzzlighthouse.com</a></p>
+                <p>9180 Gulf Shore Dr, Naples, FL 34108, USA</p>
+                <p><a href="tel:239-734-9180">239-734-9180</a></p>
+            </div>
+            <div id="newsletter-signup">
+                <p><strong>Don't Miss the Buzz</strong></p>
+                <p>News, Events, and More!</p>
+                <form id="newsletter-form">
+                    <input type="email" id="email-input" placeholder="Your Email" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p id="newsletter-thanks" style="display:none;">Thank You for Subscribing!</p>
+            </div>
+            <p class="copyright">&copy; <span id="current-year"></span> Buzz's Lighthouse. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
