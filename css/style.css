@@ -241,11 +241,12 @@ img {
 #gift-cards p {
     margin-bottom: 1.5rem;
 }
-#gift-cards .img-placeholder, #gift-cards img { /* Style for actual image if it replaces placeholder */
-    max-height: 150px;
-    max-width: 300px; /* As per original placeholder style */
-    margin-top: 15px;
+#gift-cards .img-placeholder, #gift-cards .gift-card-image { /* Updated selector for the new class */
+    max-height: 250px; /* Increased max-height for better visibility if image is larger */
+    max-width: 350px; /* Increased max-width slightly */
+    margin-top: 20px; /* Adjusted margin */
     border-radius: 5px;
+    border: 1px solid #eee; /* Optional subtle border */
 }
 
 
