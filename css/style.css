@@ -367,27 +367,29 @@ img {
 }
 
 .gallery-item {
-    /* overflow: hidden; */ /* Not needed if object-fit: contain is on img */
     border-radius: 5px;
-    /* height: auto; */ /* Let content determine height */
-    display: flex; /* To help center contained image if it's smaller */
-    flex-direction: column;
-    justify-content: center; /* Center image vertically if container is taller */
-    background-color: #f9f9f9; /* Optional: subtle bg if images have transparency or vary a lot */
+    display: flex;
+    flex-direction: column; /* Keep for potential captions later, though centering works with this */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    aspect-ratio: 4/3;
+    background-color: transparent; /* Removed the light gray background */
+    overflow: hidden; /* Recommended if child img might somehow exceed bounds, though unlikely with 100% width/height and contain */
 }
 
 /* .gallery-item height is removed, specific max-heights will be on images */
 
 .gallery-item img {
     width: 100%;
-    /* height: 100%; */ /* Remove fixed height percentage */
-    object-fit: contain; /* Show whole image */
-    border-radius: 5px;
-    max-height: 250px; /* Default max height for food/ambiance gallery images */
+    height: 100%;
+    object-fit: contain; /* Show whole image, letterboxed/pillarboxed within parent's 4/3 aspect ratio */
+    border-radius: 5px; /* Keep border-radius if desired on the image itself */
+    /* max-height is removed, parent's aspect-ratio and img height:100% will control this */
 }
 
 #lighthouse-gallery .gallery-item img {
-    max-height: 280px; /* Specific max height for lighthouse gallery images */
+    /* max-height is removed here as well, will conform to .gallery-item's 4/3 aspect-ratio */
+    /* Any specific styling for lighthouse images different from general gallery images can remain if needed, but for sizing it should be consistent. */
 }
 
 
@@ -585,16 +587,19 @@ img {
         max-height: 150px; /* Adjust max specialty image height for mobile, using contain */
     }
 
+    /* Gallery items will maintain their 4/3 aspect ratio naturally.
+       The grid's minmax(250px, 1fr) will handle column count and sizing.
+       No specific height or max-height adjustments needed for .gallery-item or .gallery-item img
+       in the media query if the aspect-ratio approach is working correctly, as it scales with width.
+       The previous height overrides for .gallery-item and max-height for .gallery-item img are removed.
+    */
+    .gallery-item {
+        /* Ensure no fixed height override from previous responsive styles */
+        height: auto; /* This should already be the case if not set, but explicitly ensures aspect-ratio takes precedence */
+    }
     .gallery-item img {
-        /* height: auto; */ /* Ensure height is auto */
-        max-height: 200px; /* Adjust gallery item image max-height for mobile */
-    }
-    #lighthouse-gallery .gallery-item img {
-        /* height: auto; */ /* Ensure height is auto */
-        max-height: 230px; /* Adjust lighthouse gallery item image max-height for mobile */
-    }
-    .gallery-item { /* Ensure gallery item itself doesn't impose a fixed height */
-        height: auto;
+         /* Ensure no max-height override from previous responsive styles that would conflict with 100% height in 4/3 box */
+        max-height: none; /* Or simply remove any max-height from here if one existed */
     }
 
 
